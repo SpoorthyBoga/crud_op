@@ -1,10 +1,12 @@
+
 {
   "name": "simple-crud-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js CRUD API for DevOps experiments",
   "main": "index.js",
   "scripts": {
-    "test": "node --check index.js"
+    "start": "node index.js",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",

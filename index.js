@@ -2,10 +2,16 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 8080;
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.json({
+        message: "DevOps CRUD API is running"
+    });
+});
 
 let items = [];
 
@@ -70,6 +76,10 @@ app.delete("/items/:id", (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;
